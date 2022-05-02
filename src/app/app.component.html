@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p> PLease enter your text inside the field</p>
+
+<label for="fname">First name:</label><br>
+<textarea type="text" id="fname" name = "fname" maxlength="1000"  [formControl]= "text"></textarea>
+
+<textarea type="text" id="flanguage" name = "flanguage" [formControl]= "language"></textarea><br>
+<!--<input type="submit" value="Submit" (click)= "sendPostRequest(interText.value.toString(), language.value.toString())"> -->
+<input type="submit" value="Submit" (click)= "postMethode(text.value.toString(), language.value.toString())">
+
+<!--<select  [formControl]= "language" >
+  <option
+    value="en">englich</option>
+  <option
+    value="de">German</option>
+</select>-->
+
+<div>
+<ul *ngFor="let response of datafrompost">
+  <ol>
+    {{response.text }}   |      {{response.tag}}
+  </ol>
+</ul>
+</div>
+
+</body>
+</html>
+
